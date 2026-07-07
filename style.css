@@ -8,12 +8,13 @@
 
 body {
     min-height: 100vh;
-    display: flex;              /* මැදට ගන්න */
+    display: flex;
     justify-content: center;    
     align-items: center;        
     font-family: 'Poppins', sans-serif;
     color: white;
     padding: 20px;
+    background: #000; /* video load වෙනකන් black */
 }
 
 /* 2. Background */
@@ -21,26 +22,28 @@ body {
     position: fixed; top: 0; left: 0; 
     width: 100%; height: 100%; 
     object-fit: cover; z-index: -2; 
+    filter: brightness(0.7) hue-rotate(200deg); /* video එකටත් blue tint */
 }
 .overlay { 
     position: fixed; top: 0; left: 0; 
     width: 100%; height: 100%; 
-    background: rgba(0,0,0,0.6); z-index: -1; 
+    background: linear-gradient(135deg, rgba(0, 51, 102, 0.7), rgba(0, 102, 204, 0.5)); 
+    z-index: -1; 
 }
 #particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
 
-/* Main Container - මැදට */
+/* Main Container - Glass Blue */
 .container {
     position: relative;
     width: 100%;
     max-width: 500px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(0, 102, 204, 0.15);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(0, 170, 255, 0.3);
     padding: 30px 25px;
     border-radius: 25px;
     text-align: center;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 30px rgba(0, 170, 255, 0.4);
     z-index: 2;
 }
 
@@ -50,6 +53,7 @@ body {
     height: 180px; 
     object-fit: cover; 
     border-radius: 15px; 
+    border: 2px solid rgba(0, 170, 255, 0.5);
 }
 
 /* 4. Profile */
@@ -57,74 +61,105 @@ body {
     width: 120px; 
     height: 120px; 
     border-radius: 50%; 
-    border: 4px solid white; 
+    border: 4px solid #00aaff; 
     margin-top: -60px; 
     object-fit: cover; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    box-shadow: 0 0 20px rgba(0, 170, 255, 0.8);
 }
 
-h1 { margin-top: 10px; font-size: 2em; letter-spacing: 2px; font-weight: 700; }
+h1 { 
+    margin-top: 10px; 
+    font-size: 2em; 
+    letter-spacing: 2px; 
+    font-weight: 700; 
+    color: #00ccff;
+    text-shadow: 0 0 10px rgba(0, 204, 255, 0.7);
+}
 
 /* 6. About */
-.about { margin: 15px 0 25px 0; font-size: 0.95em; opacity: 0.9; line-height: 1.6; }
+.about { 
+    margin: 15px 0 25px 0; 
+    font-size: 0.95em; 
+    opacity: 0.9; 
+    line-height: 1.6; 
+}
 
 /* 7-12 + 17. Buttons */
 .buttons { display: flex; flex-direction: column; gap: 12px; }
 .buttons a {
-    text-decoration: none; color: white; 
-    background: rgba(255,255,255,0.15);
-    padding: 12px; border-radius: 12px; 
-    font-weight: 600; transition: 0.3s;
+    text-decoration: none; 
+    color: white; 
+    background: linear-gradient(90deg, #0066cc, #0099ff);
+    padding: 12px; 
+    border-radius: 12px; 
+    font-weight: 600; 
+    transition: 0.3s;
+    border: 1px solid rgba(0, 204, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 170, 255, 0.3);
 }
 .buttons a:hover { 
-    background: rgba(255,255,255,0.3); 
-    transform: translateY(-2px); 
+    background: linear-gradient(90deg, #0099ff, #00ccff); 
+    transform: translateY(-3px); 
+    box-shadow: 0 0 20px rgba(0, 204, 255, 0.7);
 }
 
 /* 13,14. Projects */
 .projects { display: flex; flex-direction: column; gap: 15px; margin: 25px 0; }
 .card {
-    background: rgba(255,255,255,0.1); 
+    background: rgba(0, 102, 204, 0.2); 
     padding: 20px; 
     border-radius: 15px;
+    border: 1px solid rgba(0, 170, 255, 0.3);
 }
-.card h2 { margin-bottom: 8px; font-size: 1.2em; }
+.card h2 { 
+    margin-bottom: 8px; 
+    font-size: 1.2em; 
+    color: #00ccff;
+}
 .card p { margin-bottom: 15px; font-size: 0.9em; opacity: 0.9; }
 
-/* Project Button */
+/* Project Button - Blue */
 .project-btn {
     display: inline-block;
     text-decoration: none;
-    color: black;
-    background: white;
+    color: white;
+    background: linear-gradient(90deg, #0066cc, #0099ff);
     padding: 10px 20px;
     border-radius: 10px;
     font-weight: bold;
     transition: 0.3s;
+    box-shadow: 0 0 10px rgba(0, 170, 255, 0.4);
 }
 .project-btn:hover {
-    background: #00f2ff;
+    background: linear-gradient(90deg, #0099ff, #00ccff);
     transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 204, 255, 0.8);
 }
 
 /* 16. Footer */
-.footer { margin-top: 20px; font-size: 0.9em; opacity: 0.7; }
+.footer { 
+    margin-top: 20px; 
+    font-size: 0.9em; 
+    opacity: 0.8; 
+    color: #00ccff;
+}
 
 /* 1. Loader */
 .loader { 
     position: fixed; top: 0; left: 0; 
     width: 100%; height: 100%; 
-    background: black; 
+    background: #001a33; 
     display: flex; justify-content: center; align-items: center; 
     z-index: 999; 
     animation: fadeOut 1s 2s forwards; 
 }
 .loader-circle { 
     width: 50px; height: 50px; 
-    border: 4px solid rgba(255,255,255,0.3); 
-    border-top: 4px solid white; 
+    border: 4px solid rgba(0, 170, 255, 0.3); 
+    border-top: 4px solid #00ccff; 
     border-radius: 50%; 
     animation: spin 1s linear infinite; 
+    box-shadow: 0 0 15px rgba(0, 204, 255, 0.5);
 }
 @keyframes spin { 100% { transform: rotate(360deg); } }
 @keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
