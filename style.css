@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;              /* මැදට ගන්න */
+    justify-content: center;    
+    align-items: center;        
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    padding: 20px;
+}
+
+/* 2. Background */
+.bg-video { 
+    position: fixed; top: 0; left: 0; 
+    width: 100%; height: 100%; 
+    object-fit: cover; z-index: -2; 
+}
+.overlay { 
+    position: fixed; top: 0; left: 0; 
+    width: 100%; height: 100%; 
+    background: rgba(0,0,0,0.6); z-index: -1; 
+}
+#particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+
+/* Main Container - මැදට */
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 30px 25px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+/* 3. Cover */
+.cover { 
+    width: 100%; 
+    height: 180px; 
+    object-fit: cover; 
+    border-radius: 15px; 
+}
+
+/* 4. Profile */
+.profile { 
+    width: 120px; 
+    height: 120px; 
+    border-radius: 50%; 
+    border: 4px solid white; 
+    margin-top: -60px; 
+    object-fit: cover; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+h1 { margin-top: 10px; font-size: 2em; letter-spacing: 2px; font-weight: 700; }
+
+/* 6. About */
+.about { margin: 15px 0 25px 0; font-size: 0.95em; opacity: 0.9; line-height: 1.6; }
+
+/* 7-12 + 17. Buttons */
+.buttons { display: flex; flex-direction: column; gap: 12px; }
+.buttons a {
+    text-decoration: none; color: white; 
+    background: rgba(255,255,255,0.15);
+    padding: 12px; border-radius: 12px; 
+    font-weight: 600; transition: 0.3s;
+}
+.buttons a:hover { 
+    background: rgba(255,255,255,0.3); 
+    transform: translateY(-2px); 
+}
+
+/* 13,14. Projects */
+.projects { display: flex; flex-direction: column; gap: 15px; margin: 25px 0; }
+.card {
+    background: rgba(255,255,255,0.1); 
+    padding: 20px; 
+    border-radius: 15px;
+}
+.card h2 { margin-bottom: 8px; font-size: 1.2em; }
+.card p { margin-bottom: 15px; font-size: 0.9em; opacity: 0.9; }
+
+/* Project Button */
+.project-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.project-btn:hover {
+    background: #00f2ff;
+    transform: scale(1.05);
+}
+
+/* 16. Footer */
+.footer { margin-top: 20px; font-size: 0.9em; opacity: 0.7; }
+
+/* 1. Loader */
+.loader { 
+    position: fixed; top: 0; left: 0; 
+    width: 100%; height: 100%; 
+    background: black; 
+    display: flex; justify-content: center; align-items: center; 
+    z-index: 999; 
+    animation: fadeOut 1s 2s forwards; 
+}
+.loader-circle { 
+    width: 50px; height: 50px; 
+    border: 4px solid rgba(255,255,255,0.3); 
+    border-top: 4px solid white; 
+    border-radius: 50%; 
+    animation: spin 1s linear infinite; 
+}
+@keyframes spin { 100% { transform: rotate(360deg); } }
+@keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
